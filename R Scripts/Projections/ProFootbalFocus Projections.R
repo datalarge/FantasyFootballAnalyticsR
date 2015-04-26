@@ -136,37 +136,3 @@ write.csv(projections_pff, file = paste0(getwd(), "/Data/PFF-Projections.csv"), 
 
 save(projections_pff, file = paste0(getwd(), "/Data/Historical Projections/PFF-Projections-", season, ".RData"))
 write.csv(projections_pff, file = paste0(getwd(), "/Data/Historical Projections/PFF-Projections-", season, ".csv"), row.names=FALSE)
-
-
-#########################################
-# if(F){
-# 
-# #Rename Players
-# projections_cbs[name=="TIMOTHYWRIGHT", name:="TIMWRIGHT"]
-# 
-# #Calculate Overall Rank
-# projections_cbs <- projections_cbs[order(-points)][,overallRank := 1:.N, by=list(sourceName)]
-# 
-# #Calculate Position Rank
-# projections_cbs <- projections_cbs[order(-points)][,positionRank := 1:.N, by=list(sourceName, pos)]
-# 
-# #Order variables in data set
-# allVars <- c(prefix, paste(sourceSpecific, suffix, sep="_"), varNames)
-# keepVars <- allVars[allVars %in% names(projections_cbs)]
-# projections_cbs <- projections_cbs[,keepVars, with=FALSE]
-# 
-# #Order players by overall rank
-# projections_cbs <- projections_cbs[order(projections_cbs$overallRank),]
-# 
-# #Density Plot
-# ggplot(projections_cbs, aes(x=points)) + geom_density(fill="red", alpha=.3) + xlab("Player's Projected Points") + ggtitle("Density Plot of CBS Projected Points")
-# ggsave(paste(getwd(),"/Figures/CBS projections.jpg", sep=""), width=10, height=10)
-# dev.off()
-# 
-# #Save file
-# save(projections_cbs, file = paste0(getwd(), "/Data/CBS-Projections.RData"))
-# write.csv(projections_cbs, file = paste(getwd(), "/Data/CBS-Projections.csv"), row.names=FALSE)
-# 
-# save(projections_cbs, file = paste0(getwd(), "/Data/Historical Projections/CBS-Projections-", season, ".RData"))
-# write.csv(projections_cbs, file = paste0(getwd(), "/Data/Historical Projections/CBS-Projections-", season, ".csv"), row.names=FALSE)
-# }
